@@ -2,14 +2,14 @@
 
 //Dog class creation
 
-Dog::Dog() : Animal()
+Dog::Dog() : A_Animal()
 {
 	std::cout << "Dog instance" << std::endl;
 	type = "Dog";
 	this->mind = new Brain();
 }
 
-Dog::Dog(const Dog& src) : Animal()
+Dog::Dog(const Dog& src) : A_Animal()
 {
 	std::cout << "Dog copying instance" << std::endl;
 	this->mind = new Brain();
@@ -32,6 +32,12 @@ Dog::~Dog()
 {
 	std::cout << "Dog destrution" << std::endl;
 }
+
+std::string Dog::getType() const
+{
+	return (this->type);
+}
+
 
 void Dog::makeSound() const
 {
@@ -57,14 +63,14 @@ void Dog::printIdea(const std::string idea)
 
 //Cat class creation
 
-Cat::Cat() : Animal()
+Cat::Cat() : A_Animal()
 {
 	std::cout << "Cat instance" << std::endl;
 	type = "Cat";
 	this->mind = new Brain();
 }
 
-Cat::Cat(const Cat& src) : Animal()
+Cat::Cat(const Cat& src) : A_Animal()
 {
 	std::cout << "Cat copying instance" << std::endl;
 	this->mind = new Brain();
@@ -86,6 +92,11 @@ Cat& Cat::operator = (const Cat& src)
 Cat::~Cat()
 {
 	std::cout << "Cat destrution" << std::endl;
+}
+
+std::string Cat::getType() const
+{
+	return (this->type);
 }
 
 void Cat::makeSound() const
