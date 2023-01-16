@@ -4,14 +4,16 @@
 
 void AnimalExam(const Animal* _animal)
 {
-	std::cout << _animal->getType() << std::endl;
+	std::cout << _animal->getType() << ": ";
 	_animal->makeSound();
+	std::cout << std::endl;
 }
 
 void AnimalExam(const WrongAnimal* _animal)
 {
-	std::cout << _animal->getType() << std::endl;
+	std::cout << _animal->getType() << ": ";
 	_animal->makeSound();
+	std::cout << std::endl;
 }
 
 int main()

@@ -4,21 +4,21 @@
 
 Dog::Dog() : A_Animal()
 {
-	std::cout << "Dog instance" << std::endl;
+	std::cout << "[DOG] Creating..." << std::endl;
 	type = "Dog";
 	this->mind = new Brain();
 }
 
 Dog::Dog(const Dog& src) : A_Animal()
 {
-	std::cout << "Dog copying instance" << std::endl;
+	std::cout << "[DOG] Instance..." << std::endl;
 	this->mind = new Brain();
 	*this = src;
 }
 
 Dog& Dog::operator = (const Dog& src)
 {
-	std::cout << "Dog assigment" << std::endl;
+	std::cout << "[DOG] Assigning..." << std::endl;
 	if (this != &src)
 	{
 		this->type = src.type;
@@ -30,7 +30,7 @@ Dog& Dog::operator = (const Dog& src)
 
 Dog::~Dog()
 {
-	std::cout << "Dog destrution" << std::endl;
+	std::cout << "[DOG] Destroying..." << std::endl;
 }
 
 std::string Dog::getType() const
@@ -65,21 +65,21 @@ void Dog::printIdea(const std::string idea)
 
 Cat::Cat() : A_Animal()
 {
-	std::cout << "Cat instance" << std::endl;
+	std::cout << "[Cat] Creating..." << std::endl;
 	type = "Cat";
 	this->mind = new Brain();
 }
 
 Cat::Cat(const Cat& src) : A_Animal()
 {
-	std::cout << "Cat copying instance" << std::endl;
+	std::cout << "[Cat] Instance..." << std::endl;
 	this->mind = new Brain();
 	*this = src;
 }
 
 Cat& Cat::operator = (const Cat& src)
 {
-	std::cout << "Cat assigment" << std::endl;
+	std::cout << "[Cat] Assigning..." << std::endl;
 	if (this != &src)
 	{
 		this->type = src.type;
@@ -91,7 +91,7 @@ Cat& Cat::operator = (const Cat& src)
 
 Cat::~Cat()
 {
-	std::cout << "Cat destrution" << std::endl;
+	std::cout << "[CAT] Destroying..." << std::endl;
 }
 
 std::string Cat::getType() const
@@ -109,16 +109,19 @@ void Cat::makeSound() const
 
 WrongCat::WrongCat() : WrongAnimal()
 {
+	std::cout << "[W_ANIMAL]: Creating..." << std::endl;
 	type = "Cat";
 }
 
 WrongCat::WrongCat(const WrongCat& src) : WrongAnimal()
 {
+	std::cout << "[W_ANIMAL]: Instance..." << std::endl;
 	*this = src;
 }
 
 WrongCat& WrongCat::operator = (const WrongCat& src)
 {
+	std::cout << "[W_ANIMAL]: Assigning..." << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
@@ -126,7 +129,7 @@ WrongCat& WrongCat::operator = (const WrongCat& src)
 
 WrongCat::~WrongCat()
 {
-
+	std::cout << "[W_ANIMAL]: Destroying..." << std::endl;
 }
 
 void WrongCat::makeSound() const

@@ -2,12 +2,12 @@
 
 A_Animal::A_Animal()
 {
-	std::cout << "A_Animal instance" << std::endl;
+	std::cout << "[ABS_ANIMAL]: Creating..." << std::endl;
 }
 
 A_Animal& A_Animal::operator = (const A_Animal& src)
 {
-	std::cout << "A_Animal assigment" << std::endl;
+	std::cout << "[ABS_ANIMAL]: Assining..." << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
@@ -15,11 +15,11 @@ A_Animal& A_Animal::operator = (const A_Animal& src)
 
 A_Animal::A_Animal(const A_Animal &src)
 {
-	std::cout << "A_Animal copy" << std::endl;
+	std::cout << "[ABS_ANIMAL]: Copying..." << std::endl;
 	*this = src;
 }
 
 A_Animal::~A_Animal()
 {
-	std::cout << "A_Animal destruction" << std::endl;
+	std::cout << "[ABS_ANIMAL]: Destroying..." << std::endl;
 }

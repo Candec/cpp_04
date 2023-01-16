@@ -2,17 +2,17 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain instance" << std::endl;
+	std::cout << "[BRAIN] Creating..." << std::endl;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain destruction" << std::endl;
+	std::cout << "[BRAIN] Destroying..." << std::endl;
 }
 
 Brain& Brain::operator = (const Brain& src)
 {
-	std::cout << "Brain assigment" << std::endl;
+	std::cout << "[BRAIN] Assigment..." << std::endl;
 	if (this != &src)
 	{
 		for (size_t i = 0; i < 100; i++)
@@ -23,7 +23,7 @@ Brain& Brain::operator = (const Brain& src)
 
 Brain::Brain(const Brain& src)
 {
-	std::cout << "Brain copy" << std::endl;
+	std::cout << "[BRAIN] Copying..." << std::endl;
 	*this = src;
 }
 

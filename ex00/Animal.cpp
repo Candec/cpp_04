@@ -2,11 +2,12 @@
 
 Animal::Animal()
 {
-
+	std::cout << "[ANIMAL]: Creating..." << std::endl;
 }
 
 Animal& Animal::operator = (const Animal& src)
 {
+	std::cout << "[ANIMAL]: Assining..." << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
@@ -14,12 +15,13 @@ Animal& Animal::operator = (const Animal& src)
 
 Animal::Animal(const Animal &src)
 {
+	std::cout << "[ANIMAL]: Copying..." << std::endl;
 	*this = src;
 }
 
 Animal::~Animal()
 {
-
+	std::cout << "[ANIMAL]: Destroying..." << std::endl;
 }
 
 std::string Animal::getType() const
