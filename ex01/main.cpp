@@ -39,7 +39,11 @@ void ExamAnimal(Dog _dog)
 
 int main()
 {
-	// population test
+	std::cout << std::endl;
+	std::cout << "===========================" << std::endl;
+	std::cout << "======Population Test======" << std::endl;
+	std::cout << "===========================" << std::endl;
+
 	size_t size = 6;
 
 	Animal *animals[size];
@@ -59,27 +63,41 @@ int main()
 		delete animals[i];
 	}
 
-	// DeepMind test
+	std::cout << std::endl;
+	std::cout << "===========================" << std::endl;
+	std::cout << "======DeepMind Test========" << std::endl;
+	std::cout << "===========================" << std::endl;
+
+	std::cout << std::endl << "<--- SCOOBY --->" << std::endl;
 	Dog *Scooby = new Dog();
 
 	Scooby->setIdea(0, "Scooby cookies");
-	Scooby->setIdea(42, "Education had a bug. We fixed it");
+	Scooby->setIdea(42, "The mystery we will resolved");
 	Scooby->setIdea(99, "Saggy");
+
 
 	ExamAnimal(Scooby);
 
+	std::cout << std::endl << "<--- PLUTO --->" << std::endl;
 	Dog *Pluto = new Dog(*Scooby);
 
 	ExamAnimal(Pluto);
 
+	std::cout << std::endl << "<--- BARTON --->" << std::endl;
 	Dog Barton(*Scooby);
 
 	ExamAnimal(Barton);
 
+	std::cout << std::endl << "<--- SPOILER: *Scooby dies* --->" << std::endl;
 	delete Scooby;
 
+	std::cout << std::endl << "<--- (DEL)PLUTO --->" << std::endl;
 	ExamAnimal(Pluto);
+	
+	delete Pluto;
+	std::cout << std::endl << "<--- (DEL)BARTON --->" << std::endl;
 	ExamAnimal(Barton);
 
+	std::cout << std::endl << "<--- DELETING ANIMALS --->" << std::endl;
 	return (0);
 }

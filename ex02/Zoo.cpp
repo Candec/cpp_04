@@ -30,6 +30,7 @@ Dog& Dog::operator = (const Dog& src)
 
 Dog::~Dog()
 {
+	delete mind;
 	std::cout << "[DOG] Destroying..." << std::endl;
 }
 
@@ -91,6 +92,7 @@ Cat& Cat::operator = (const Cat& src)
 
 Cat::~Cat()
 {
+	delete mind;
 	std::cout << "[CAT] Destroying..." << std::endl;
 }
 

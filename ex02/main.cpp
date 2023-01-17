@@ -39,49 +39,65 @@ void ExamAnimal(Dog _dog)
 
 int main()
 {
-	// population test
+	std::cout << std::endl;
+	std::cout << "===========================" << std::endl;
+	std::cout << "======Population Test======" << std::endl;
+	std::cout << "===========================" << std::endl;
+
 	size_t size = 6;
 
-	Dog *Dogs[size/2];
-	Cat *Cats[size/2];
+	A_Animal *animals[size];
 
-	for (size_t i = 0; i < size / 2; i++)
+	for (size_t i = 0; i < size; i++)
 	{
-		Dogs[i] = new Dog();
-		Cats[i] = new Cat();
+		if (i < size / 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
 	}
 
-	for (size_t i = 0; i < size / 2; i++)
+	for (size_t i = 0; i < size; i++)
 	{
-		std::cout << "[" << Dogs[i]->getType() << " " << i << "]: ";
-		Dogs[i]->makeSound();
-		delete Dogs[i];
-		std::cout << "[" << Cats[i]->getType() << " " << i << "]: ";
-		Cats[i]->makeSound();
-		delete Cats[i];
+		std::cout << "[" << animals[i]->getType() << " " << i << "]: ";
+		animals[i]->makeSound();
+		delete animals[i];
 	}
 
-	// DeepMind test
+	std::cout << std::endl;
+	std::cout << "===========================" << std::endl;
+	std::cout << "======DeepMind Test========" << std::endl;
+	std::cout << "===========================" << std::endl;
+
+	std::cout << std::endl << "<--- SCOOBY --->" << std::endl;
 	Dog *Scooby = new Dog();
 
 	Scooby->setIdea(0, "Scooby cookies");
-	Scooby->setIdea(42, "Education had a bug. We fixed it");
+	Scooby->setIdea(42, "The mystery we will resolved");
 	Scooby->setIdea(99, "Saggy");
+
 
 	ExamAnimal(Scooby);
 
+	std::cout << std::endl << "<--- PLUTO --->" << std::endl;
 	Dog *Pluto = new Dog(*Scooby);
 
 	ExamAnimal(Pluto);
 
+	std::cout << std::endl << "<--- BARTON --->" << std::endl;
 	Dog Barton(*Scooby);
 
 	ExamAnimal(Barton);
 
+	std::cout << std::endl << "<--- SPOILER: *Scooby dies* --->" << std::endl;
 	delete Scooby;
 
+	std::cout << std::endl << "<--- (DEL)PLUTO --->" << std::endl;
 	ExamAnimal(Pluto);
+	
+	delete Pluto;
+	std::cout << std::endl << "<--- (DEL)BARTON --->" << std::endl;
 	ExamAnimal(Barton);
 
+	std::cout << std::endl << "<--- DELETING ANIMALS --->" << std::endl;
 	return (0);
 }

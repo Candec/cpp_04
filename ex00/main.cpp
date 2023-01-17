@@ -19,8 +19,8 @@ void AnimalExam(const WrongAnimal* _animal)
 int main()
 {
 	const Animal* Meta = new Animal();
-	const Animal* Kitty = new Dog();
-	const Animal* Doggy = new Cat();
+	const Animal* Kitty = new Cat();
+	const Animal* Doggy = new Dog();
 	const WrongAnimal* W_Meta = new WrongAnimal();
 	const WrongAnimal* W_Kitty = new WrongCat();
 
